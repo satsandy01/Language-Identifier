@@ -26,7 +26,9 @@ To run the Identifier:
 To add another language:
 	
 	1. Download the corpus for that language.
-	2. Find the file within the corpus which contains wordId-word-frequency triplet.
+	2. Find the file within the corpus which contains the triplet
+		wordId-word-frequency
 	3. Copy that file to the resources directory within this directory.
 	4. Open the file language.txt
-	5. Add an entry in this format: "<language_name><tab><name_of_words-file_copied>".
+	5. Add an entry in this format:
+		"<language_name><tab><name_of_words-file_copied>".
