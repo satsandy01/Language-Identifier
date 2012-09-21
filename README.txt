@@ -31,4 +31,4 @@ To add another language:
 	3. Copy that file to the resources directory within this directory.
 	4. Open the file language.txt
 	5. Add an entry in this format:
-		"<language_name><tab><name_of_words-file_copied>".
+		"<language_name><tab>resources/<name_of_words-file_copied>".
