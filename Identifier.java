@@ -8,7 +8,7 @@ public class Identifier
 	public static void main(String args[]) throws IOException
 	{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-		//args[0] = training-size
+		//args[0] = training-size, if specified explicitly
 		int trainingSize;
 		if(args.length==0)
 		{
@@ -23,11 +23,17 @@ public class Identifier
 			System.exit(0);
 		}
 		LanguageTrainer trainer = new LanguageTrainer(languageList, trainingSize);
-		trainer.startTraining();
-		Classifier languageIdentifier = new Classifier(trainer);
+		trainer.startTraining(); //training starts
+		Classifier languageIdentifier = new Classifier(trainer); //pass the trainer with all the trained data to the classifier
 		int more=1;
 		while(more==1)
 		{
+			/**
+			 * Get the document name or from the user,
+			 * Read the file
+			 * Pre-process and break the string into tokens(words)
+			 * Classify the document and get the predicted language
+			 */
 			System.out.print("\nEnter name of document: ");
 			String documentName=in.readLine();
 			Document doc = new Document(documentName);

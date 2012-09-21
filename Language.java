@@ -2,12 +2,17 @@ import java.io.*;
 import java.util.*;
 public class Language
 {
-	private int trainingSize; //trainingSize no. of words to be taken into account while training
-	private int id;
-	String name;
-	private int total_frequency;
-	private HashMap<String, String> wordId;
-	private HashMap<String, String> wordFreq;
+	/**
+	 * Each Language object models one natural language
+	 * Trains over available statistical data
+	 * Makes the trained data available to the Classifier via an instance of LanguageTrainer
+	 */
+	private int trainingSize; //trainingSize = no. of words to be taken into account while training
+	private int id; //language id generated according to the position of this language in the file "languages.txt"
+	String name; //name of the language
+	private int total_frequency; //sum total of the frequencies of all the words in a language
+	private HashMap<String, String> wordId; // word --> word-Id
+	private HashMap<String, String> wordFreq; //word --> word-Frequency
 	public Language(int i, String n, int t)
 	{
 		wordId=new HashMap<String, String>(1000);
@@ -17,6 +22,7 @@ public class Language
 		name=n;
 		trainingSize=t;
 	}
+	//making the trained data available
 	public int getLanguageId()
 	{
 		return id;
@@ -39,12 +45,13 @@ public class Language
 		else
 			return -1;
 	}
-	public Set<String> getSetOfWords()
+	public Set<String> getSetOfWords() //returns the set of words in a particular language
 	{
 		return wordId.keySet();
 	}
 	public void train(String filename)throws IOException
 	{
+		//Training by putting word-Frequencies in a HashMap with words as indices
 		InputStream in = Language.class.getResourceAsStream(filename);
 		BufferedReader filein = new BufferedReader(new InputStreamReader(in));
 		System.out.print("Training on "+name+"...");

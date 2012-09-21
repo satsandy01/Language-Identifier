@@ -2,7 +2,7 @@ import java.io.*;
 public class Document
 {
 	private String filename;
-	String[] words;
+	String[] words; //array of words after tokenizing the document
 	public Document(String f)
 	{
 		filename = f;
@@ -20,6 +20,7 @@ public class Document
 			content+=(line+" ");
 		}
 		System.out.print("Done\n");
+		//Removing punctuation marks from the document string
 		System.out.print("Pre-processing the document to remove punctuation marks...");
 		content=content.replace(',', ' ');
 		content=content.replace('\"', ' ');
