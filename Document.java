@@ -1,0 +1,39 @@
+import java.io.*;
+public class Document
+{
+	private String filename;
+	String[] words;
+	public Document(String f)
+	{
+		filename = f;
+	}
+	public void breakIntoWords() throws IOException
+	{
+		BufferedReader filein = new BufferedReader(new FileReader(filename));
+		String line="";
+		String content="";
+		System.out.print("Reading document...");
+		while((line=filein.readLine())!=null)
+		{
+			if(line=="\n")
+				continue;
+			content+=(line+" ");
+		}
+		System.out.print("Done\n");
+		System.out.print("Pre-processing the document to remove punctuation marks...");
+		content=content.replace(',', ' ');
+		content=content.replace('\"', ' ');
+		content=content.replace('.', ' ');
+		content=content.replace(';', ' ');
+		content=content.replace(':', ' ');
+		content=content.replace('!', ' ');
+		content=content.replace('?', ' ');
+		content=content.replace('(', ' ');
+		content=content.replace(')', ' ');
+		content=content.replace('&', ' ');
+		content=content.replace('/', ' ');
+		content=content.replaceAll("  ", " ");
+		System.out.print("Done\n");
+		words=content.split(" ");
+	}
+}
