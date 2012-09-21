@@ -23,6 +23,8 @@ To run the Identifier:
 		Alternatively, to specify training size to 10000 (for example),
 		java Identifier 10000
 
+The program starts with training on the languages and then prompts to provide the name of a test document. Once you provide it, the Identifier will score and predict its language.
+
 To add another language:
 	
 	1. Download the corpus for that language.
