@@ -3,11 +3,15 @@ import java.util.*;
 public class Document
 {
 	private String filename;
-	ArrayList<String> words; //array of words after tokenizing the document
+	private ArrayList<String> words; //array of words after tokenizing the document
 	public Document(String f)
 	{
 		filename = f;
 		words = new ArrayList<String>();
+	}
+	public ArrayList<String> getWords()
+	{
+		return words;
 	}
 	public boolean breakIntoWords()
 	{

@@ -22,6 +22,7 @@ public class Classifier
 			p[i]=Math.log(0.10);
 		}
 		int V=trainer.getSizeOfVocabulary();
+		ArrayList<String> words = doc.getWords();
 		//V = total size of the vocabulary
 		for(int i=0;i<p.length;i++) //for every language
 		{
@@ -30,7 +31,7 @@ public class Classifier
 			//lang has all the statistical information about words in the ith language
 			int C = lang.getTotalFrequencyCount();
 			//sum total of the frequencies of all the words in the ith language
-			for(String word : doc.words)
+			for(String word : words)
 			{
 				int counts = lang.getWordFrequency(word);
 				//get the frequency of word
