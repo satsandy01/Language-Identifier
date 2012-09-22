@@ -1,11 +1,13 @@
 import java.io.*;
+import java.util.*;
 public class Document
 {
 	private String filename;
-	String[] words; //array of words after tokenizing the document
+	ArrayList<String> words; //array of words after tokenizing the document
 	public Document(String f)
 	{
 		filename = f;
+		words = new ArrayList<String>();
 	}
 	public void breakIntoWords() throws IOException
 	{
@@ -17,7 +19,7 @@ public class Document
 		{
 			if(line=="\n")
 				continue;
-			content+=(line+" ");
+			content += (line+" ");
 		}
 		System.out.print("Done\n");
 		//Removing punctuation marks from the document string
@@ -35,6 +37,6 @@ public class Document
 		content=content.replace('/', ' ');
 		content=content.replaceAll("  ", " ");
 		System.out.print("Done\n");
-		words=content.split(" ");
+		words = new ArrayList<String>(Arrays.asList(content.split(" ")));
 	}
 }

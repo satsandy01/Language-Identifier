@@ -12,8 +12,9 @@ public class Classifier
 	{
 		trainer = t;
 	}
-	public String classify(String[] words) throws IOException
+	public String classify(Document doc) throws IOException
 	{
+		doc.breakIntoWords();
 		System.out.print("Scoring...");
 		double p[]=new double[trainer.getNumberofLanguages()]; 
 		//p[i] = log conditional probability of the test string being the ith language
@@ -23,7 +24,7 @@ public class Classifier
 		}
 		int V=trainer.getSizeOfVocabulary();
 		//V = total size of the vocabulary
-		for(String word : words) //for every word in the test string
+		for(String word : doc.words) //for every word in the test document
 		{
 			for(int i=0;i<p.length;i++) //for every language
 			{
