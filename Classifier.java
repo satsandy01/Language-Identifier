@@ -24,18 +24,17 @@ public class Classifier
 		}
 		int V=trainer.getSizeOfVocabulary();
 		//V = total size of the vocabulary
-		for(String word : doc.words) //for every word in the test document
+		for(int i=0;i<p.length;i++) //for every language
 		{
-			for(int i=0;i<p.length;i++) //for every language
+			Language lang = trainer.getLanguage(i);
+			//i is the line-number of the language in the language-details file
+			//lang has all the statistical information about words in the ith language
+			int C = lang.getTotalFrequencyCount();
+			//sum total of the frequencies of all the words in the ith language
+			for(String word : doc.words)
 			{
-				int counts=0;
-				Language lang = trainer.getLanguage(i);
-				//i is the line-number of the language in the language-details file
-				//lang has all the statistical information about words in the ith language
-				counts = lang.getWordFrequency(word);
+				int counts = lang.getWordFrequency(word);
 				//get the frequency of word
-				int C = lang.getTotalFrequencyCount();
-				//sum total of the frequencies of all the words in the ith language
 				double pWord=0;
 				if(counts>0)
 				{
