@@ -47,6 +47,8 @@ public class LanguageTrainer
 			System.out.println("Starting training...");
 			while((line = filein.readLine())!=null)
 			{
+				if(line=="\n")
+					continue;
 				String inp[] = line.split("\t");
 				Language l=new Language(idx, inp[0], inp[1], trainingSize);
 				l.train();

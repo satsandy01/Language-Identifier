@@ -21,7 +21,7 @@ public class Language
 		id=i;
 		total_frequency = 0;
 		name=n;
-		trainingSize=t;
+		trainingSize=t+100;
 		filename = file;
 	}
 	//making the trained data available
@@ -68,7 +68,7 @@ public class Language
 			while(((line=filein.readLine())!=null) && (count<trainingSize))
 			{
 				count++;
-				if(count<100)				
+				if(count<100 || line=="\n")				
 					continue;
 				String contents[] = line.split("\t");
 				total_frequency+=Integer.parseInt(contents[2]);
@@ -76,6 +76,11 @@ public class Language
 				wordFreq.put(contents[1], contents[2]);
 			}
 			filein.close();
+			if(wordId.size()==0)
+			{
+				System.err.println("\nNo data for "+name+"!");
+				System.exit(0);
+			}
 			System.out.print("Done\n");
 		}
 		catch(Exception io)
