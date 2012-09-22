@@ -36,26 +36,34 @@ public class LanguageTrainer
 		//the language object holds the trained information about the corresponding language
 		return list.get(i);
 	}
-	public void startTraining() throws IOException
+	public void startTraining()
 	{
-		InputStream in = Language.class.getResourceAsStream(languageNamesFile);
-		BufferedReader filein = new BufferedReader(new InputStreamReader(in));
-		String line="";
-		int idx=0;
-		System.out.println("Starting training...");
-		while((line = filein.readLine())!=null)
+		try
 		{
-			String inp[] = line.split("\t");
-			Language l=new Language(idx, inp[0], inp[1], trainingSize);
-			l.train();
-			list.add(l); //adding the new language to the list of languages
-			Set<String> words = l.getSetOfWords();
-			for(String word : words)
-				vocabulary.add(word);
-			//adding the set of words in the language to the combined vocabulary
-			idx++;
+			InputStream in = Language.class.getResourceAsStream(languageNamesFile);
+			BufferedReader filein = new BufferedReader(new InputStreamReader(in));
+			String line="";
+			int idx=0;
+			System.out.println("Starting training...");
+			while((line = filein.readLine())!=null)
+			{
+				String inp[] = line.split("\t");
+				Language l=new Language(idx, inp[0], inp[1], trainingSize);
+				l.train();
+				list.add(l); //adding the new language to the list of languages
+				Set<String> words = l.getSetOfWords();
+				for(String word : words)
+					vocabulary.add(word);
+				//adding the set of words in the language to the combined vocabulary
+				idx++;
+			}
+			numberofLanguages = list.size();
+			System.out.println("Training complete.");
 		}
-		numberofLanguages = list.size();
-		System.out.println("Training complete.");
+		catch(Exception io)
+		{
+			System.err.println("\nFile containing the list of languages not found.\nPlease create a file \"languages.txt\" in the format mentioned in the README\n");
+			System.exit(0);
+		}
 	}
 }
