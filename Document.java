@@ -9,34 +9,42 @@ public class Document
 		filename = f;
 		words = new ArrayList<String>();
 	}
-	public void breakIntoWords() throws IOException
+	public boolean breakIntoWords()
 	{
-		BufferedReader filein = new BufferedReader(new FileReader(filename));
-		String line="";
-		String content="";
-		System.out.print("Reading document...");
-		while((line=filein.readLine())!=null)
+		try
 		{
-			if(line=="\n")
-				continue;
-			content += (line+" ");
+			BufferedReader filein = new BufferedReader(new FileReader(filename));
+			String line="";
+			String content="";
+			System.out.print("Reading document...");
+			while((line=filein.readLine())!=null)
+			{
+				if(line=="\n")
+					continue;
+				content += (line+" ");
+			}
+			System.out.print("Done\n");
+			//Removing punctuation marks from the document string
+			System.out.print("Pre-processing the document to remove punctuation marks...");
+			content=content.replace(',', ' ');
+			content=content.replace('\"', ' ');
+			content=content.replace('.', ' ');
+			content=content.replace(';', ' ');
+			content=content.replace(':', ' ');
+			content=content.replace('!', ' ');
+			content=content.replace('?', ' ');
+			content=content.replace('(', ' ');
+			content=content.replace(')', ' ');
+			content=content.replace('&', ' ');
+			content=content.replace('/', ' ');
+			content=content.replaceAll("  ", " ");
+			System.out.print("Done\n");
+			words = new ArrayList<String>(Arrays.asList(content.split(" ")));
+			return true;
 		}
-		System.out.print("Done\n");
-		//Removing punctuation marks from the document string
-		System.out.print("Pre-processing the document to remove punctuation marks...");
-		content=content.replace(',', ' ');
-		content=content.replace('\"', ' ');
-		content=content.replace('.', ' ');
-		content=content.replace(';', ' ');
-		content=content.replace(':', ' ');
-		content=content.replace('!', ' ');
-		content=content.replace('?', ' ');
-		content=content.replace('(', ' ');
-		content=content.replace(')', ' ');
-		content=content.replace('&', ' ');
-		content=content.replace('/', ' ');
-		content=content.replaceAll("  ", " ");
-		System.out.print("Done\n");
-		words = new ArrayList<String>(Arrays.asList(content.split(" ")));
+		catch(IOException io)
+		{
+			return false;
+		}
 	}
 }

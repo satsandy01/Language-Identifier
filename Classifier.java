@@ -14,7 +14,6 @@ public class Classifier
 	}
 	public Language classify(Document doc) throws IOException
 	{
-		doc.breakIntoWords();
 		System.out.print("Scoring...");
 		double p[]=new double[trainer.getNumberofLanguages()]; 
 		//p[i] = log conditional probability of the test string being the ith language

@@ -37,6 +37,11 @@ public class Identifier
 			System.out.print("\nEnter name of document: ");
 			String documentName=in.readLine();
 			Document doc = new Document(documentName);
+			if(!doc.breakIntoWords())
+			{
+				System.out.println(documentName+" not found!");
+				continue;
+			}
 			Language predictedLanguage = languageIdentifier.classify(doc);
 			System.out.println("--> The language is probably "+predictedLanguage.getName()+".\n");
 			System.out.print("More?<1 for yes/0 for no>: ");
