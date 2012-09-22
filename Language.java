@@ -51,25 +51,33 @@ public class Language
 	{
 		return wordId.keySet();
 	}
-	public void train()throws IOException
+	public void train()
 	{
-		//Training by putting word-Frequencies in a HashMap with words as indices
-		InputStream in = Language.class.getResourceAsStream(filename);
-		BufferedReader filein = new BufferedReader(new InputStreamReader(in));
-		System.out.print("Training on "+name+"...");
-		String line="";
-		int count=0;
-		while(((line=filein.readLine())!=null) && (count<trainingSize))
+		try
 		{
-			count++;
-			if(count<100)				
-				continue;
-			String contents[] = line.split("\t");
-			total_frequency+=Integer.parseInt(contents[2]);
-			wordId.put(contents[1], contents[0]);
-			wordFreq.put(contents[1], contents[2]);
+			//Training by putting word-Frequencies in a HashMap with words as indices
+			InputStream in = Language.class.getResourceAsStream(filename);
+			BufferedReader filein = new BufferedReader(new InputStreamReader(in));
+			System.out.print("Training on "+name+"...");
+			String line="";
+			int count=0;
+			while(((line=filein.readLine())!=null) && (count<trainingSize))
+			{
+				count++;
+				if(count<100)				
+					continue;
+				String contents[] = line.split("\t");
+				total_frequency+=Integer.parseInt(contents[2]);
+				wordId.put(contents[1], contents[0]);
+				wordFreq.put(contents[1], contents[2]);
+			}
+			filein.close();
+			System.out.print("Done\n");
 		}
-		filein.close();
-		System.out.print("Done\n");
+		catch(Exception io)
+		{
+			System.err.println("Data file for "+name+" not found!");
+			System.exit(0);
+		}
 	}
 }
