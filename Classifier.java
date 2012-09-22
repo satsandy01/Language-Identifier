@@ -12,7 +12,7 @@ public class Classifier
 	{
 		trainer = t;
 	}
-	public String classify(Document doc) throws IOException
+	public Language classify(Document doc) throws IOException
 	{
 		doc.breakIntoWords();
 		System.out.print("Scoring...");
@@ -55,6 +55,6 @@ public class Classifier
 			if(p[i]>p[foundLang])
 				foundLang=i;
 		}
-		return (trainer.getLanguage(foundLang)).name;
+		return trainer.getLanguage(foundLang);
 	}
 }

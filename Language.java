@@ -9,7 +9,7 @@ public class Language
 	 */
 	private int trainingSize; //trainingSize = no. of words to be taken into account while training
 	private int id; //language id generated according to the position of this language in the file "languages.txt"
-	String name; //name of the language
+	private String name; //name of the language
 	private int total_frequency; //sum total of the frequencies of all the words in a language
 	private HashMap<String, String> wordId; // word --> word-Id
 	private HashMap<String, String> wordFreq; //word --> word-Frequency
@@ -28,6 +28,10 @@ public class Language
 	public int getLanguageId()
 	{
 		return id;
+	}
+	public String getName()
+	{
+		return name;
 	}
 	public int getTotalFrequencyCount()
 	{
