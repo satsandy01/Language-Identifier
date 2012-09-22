@@ -18,7 +18,9 @@ Allows the user to decide to what extent he/she wants accuracy by allowing the u
 To run the Identifier:
 	
 	1. Open Terminal and Navigate to this directory.
-	2. Execute
+	2. Compile
+		javac *.java
+	3. Execute
 		java Identifier
 	   Alternatively, to specify training size to 10000 (for example),
 		java Identifier 10000
