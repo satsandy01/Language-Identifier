@@ -13,7 +13,8 @@ public class Language
 	private int total_frequency; //sum total of the frequencies of all the words in a language
 	private HashMap<String, String> wordId; // word --> word-Id
 	private HashMap<String, String> wordFreq; //word --> word-Frequency
-	public Language(int i, String n, int t)
+	private String filename; //name of the file containing statistical data of words in that language
+	public Language(int i, String n, String file, int t)
 	{
 		wordId=new HashMap<String, String>(1000);
 		wordFreq=new HashMap<String, String>(1000);
@@ -21,6 +22,7 @@ public class Language
 		total_frequency = 0;
 		name=n;
 		trainingSize=t;
+		filename = file;
 	}
 	//making the trained data available
 	public int getLanguageId()
@@ -49,7 +51,7 @@ public class Language
 	{
 		return wordId.keySet();
 	}
-	public void train(String filename)throws IOException
+	public void train()throws IOException
 	{
 		//Training by putting word-Frequencies in a HashMap with words as indices
 		InputStream in = Language.class.getResourceAsStream(filename);

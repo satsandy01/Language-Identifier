@@ -46,8 +46,8 @@ public class LanguageTrainer
 		while((line = filein.readLine())!=null)
 		{
 			String inp[] = line.split("\t");
-			Language l=new Language(idx, inp[0], trainingSize);
-			l.train(inp[1]);
+			Language l=new Language(idx, inp[0], inp[1], trainingSize);
+			l.train();
 			list.add(l); //adding the new language to the list of languages
 			Set<String> words = l.getSetOfWords();
 			for(String word : words)
