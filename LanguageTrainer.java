@@ -4,7 +4,7 @@ public class LanguageTrainer
 {
 	private static HashSet<String> vocabulary;
 	//Set of all the words in all the languages combined
-	private Language list[];
+	private ArrayList<Language> list;
 	//Array of Language Objects, corresponding to the list of languages supported by the identifier
 	private String languageNamesFile;
 	//file that holds the name of languages and their corresponding word-files
@@ -18,6 +18,7 @@ public class LanguageTrainer
 		languageNamesFile=file;
 		numberofLanguages=0;
 		trainingSize=tSize;
+		list = new ArrayList<Language>();
 	}
 	//Making stored data available
 	public int getNumberofLanguages()
@@ -33,41 +34,28 @@ public class LanguageTrainer
 	{
 		//returns the language object correspoding to language-id=i
 		//the language object holds the trained information about the corresponding language
-		return list[i];
-	}
-	private void createList()
-	{
-		list = new Language[numberofLanguages];
+		return list.get(i);
 	}
 	public void startTraining() throws IOException
 	{
 		InputStream in = Language.class.getResourceAsStream(languageNamesFile);
 		BufferedReader filein = new BufferedReader(new InputStreamReader(in));
 		String line="";
-		System.out.print("Calculating number of languages...");
-		while((line = filein.readLine())!=null)
-		{
-			numberofLanguages++;
-		}
-		filein.close();
-		System.out.print("Done\n");
-		createList();
-		in = Language.class.getResourceAsStream(languageNamesFile);
-		filein = new BufferedReader(new InputStreamReader(in));
-		line="";
 		int idx=0;
 		System.out.println("Starting training...");
 		while((line = filein.readLine())!=null)
 		{
 			String inp[] = line.split("\t");
-			list[idx]=new Language(idx, inp[0], trainingSize);
-			list[idx].train(inp[1]);
-			Set<String> words = list[idx].getSetOfWords();
+			Language l=new Language(idx, inp[0], trainingSize);
+			l.train(inp[1]);
+			list.add(l); //adding the new language to the list of languages
+			Set<String> words = l.getSetOfWords();
 			for(String word : words)
 				vocabulary.add(word);
 			//adding the set of words in the language to the combined vocabulary
 			idx++;
 		}
+		numberofLanguages = list.size();
 		System.out.println("Training complete.");
 	}
 }
