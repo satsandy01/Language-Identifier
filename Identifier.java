@@ -44,7 +44,7 @@ public class Identifier
 			}
 			else
 			{
-				System.out.println(documentName+"is empty or not found!\n");
+				System.out.println(documentName+" is empty or not found!\n");
 			}
 			System.out.print("More?<1 for yes/0 for no>: ");
 			more=Integer.parseInt(in.readLine());

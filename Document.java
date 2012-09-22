@@ -44,7 +44,7 @@ public class Document
 			content=content.replaceAll("  ", " ");
 			System.out.print("Done\n");
 			words = new ArrayList<String>(Arrays.asList(content.split(" ")));
-			if(words.size()==0 || (words.size()==1 && words.get(0) =="\n"))
+			if(words.size()==0 || (words.size()==1 && words.get(0) ==""))
 				return false;
 			return true;
 		}
