@@ -20,7 +20,7 @@ To run the Identifier:
 	1. Open Terminal and Navigate to this directory.
 	2. Execute
 		java Identifier
-	Alternatively, to specify training size to 10000 (for example),
+	   Alternatively, to specify training size to 10000 (for example),
 		java Identifier 10000
 
 The program starts with training on the languages and then prompts to provide the name of a test document. Once you provide it, the Identifier will score and predict its language.
