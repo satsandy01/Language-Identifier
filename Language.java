@@ -11,13 +11,13 @@ public class Language
 	private int id; //language id generated according to the position of this language in the file "languages.txt"
 	private String name; //name of the language
 	private int total_frequency; //sum total of the frequencies of all the words in a language
-	private HashMap<String, String> wordId; // word --> word-Id
-	private HashMap<String, String> wordFreq; //word --> word-Frequency
+	private HashMap<String, Integer> wordId; // word --> word-Id
+	private HashMap<String, Integer> wordFreq; //word --> word-Frequency
 	private String filename; //name of the file containing statistical data of words in that language
 	public Language(int i, String n, String file, int t)
 	{
-		wordId=new HashMap<String, String>(1000);
-		wordFreq=new HashMap<String, String>(1000);
+		wordId=new HashMap<String, Integer>(1000);
+		wordFreq=new HashMap<String, Integer>(1000);
 		id=i;
 		total_frequency = 0;
 		name=n;
@@ -40,14 +40,14 @@ public class Language
 	public int getWordFrequency(String word)
 	{
 		if(wordFreq.containsKey(word))
-			return Integer.parseInt(wordFreq.get(word));
+			return (wordFreq.get(word)).intValue();
 		else
 			return 0;
 	}
 	public int getWordId(String word)
 	{
 		if(wordId.containsKey(word))
-			return Integer.parseInt(wordId.get(word));
+			return (wordId.get(word)).intValue();
 		else
 			return -1;
 	}
@@ -72,8 +72,10 @@ public class Language
 					continue;
 				String contents[] = line.split("\t");
 				total_frequency+=Integer.parseInt(contents[2]);
-				wordId.put(contents[1], contents[0]);
-				wordFreq.put(contents[1], contents[2]);
+				Integer wid = new Integer(Integer.parseInt(contents[0]));
+				Integer wfreq = new Integer(Integer.parseInt(contents[2]));
+				wordId.put(contents[1], wid);
+				wordFreq.put(contents[1], wfreq);
 			}
 			filein.close();
 			if(wordId.size()==0)
