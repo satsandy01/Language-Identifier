@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Identifier
 {
-	static final String languageList="languages.txt";
+	static final String languageList="resources/languages.txt";
 	//file that holds the name of languages and their corresponding word-files
 	public static void main(String args[]) throws IOException
 	{
