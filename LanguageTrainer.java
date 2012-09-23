@@ -64,7 +64,7 @@ public class LanguageTrainer
 		}
 		catch(Exception io)
 		{
-			System.err.println("\nFile containing the list of languages not found.\nPlease create a file \"languages.txt\" in the format mentioned in the README\n");
+			System.err.println("\nFile containing the list of languages not found.\nPlease create the file \"resources/languages.txt\" in the format mentioned in the README\n");
 			System.exit(0);
 		}
 	}
