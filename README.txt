@@ -1,4 +1,4 @@
-A Language Identifier that finds out the language in which a document is written in.
+A Language Identifier that finds out the language in which a "text" document is written in.
 It can identify from the following languages:
 
 	+ English
