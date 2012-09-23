@@ -9,10 +9,18 @@ public class Document
 		filename = f;
 		words = new ArrayList<String>();
 	}
+	/**
+	 * returns the array of words contained within the document
+	 */
 	public ArrayList<String> getWords()
 	{
 		return words;
 	}
+	/**
+	 * reads the document, pre-processes the resulting string to remove common punctuation marks
+	 * and splits it into words
+	 * returns true if the operation was succesful, false otherwise
+	 */
 	public boolean breakIntoWords()
 	{
 		try

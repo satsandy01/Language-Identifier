@@ -5,6 +5,9 @@ public class Identifier
 {
 	static final String languageList="resources/languages.txt";
 	//file that holds the name of languages and their corresponding word-files
+	/**
+	 * This class has to be run to start the Language-Identifier program
+	 */ 
 	public static void main(String args[]) throws IOException
 	{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));

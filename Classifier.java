@@ -12,7 +12,11 @@ public class Classifier
 	{
 		trainer = t;
 	}
-	public Language classify(Document doc) throws IOException
+	/**
+	 * Scores each language for the words in the document with log conditional probabilities (Multinomial Naive Bayes)
+	 * returns the Language object corresponding to maximum likelihood
+	 */
+	public Language classify(Document doc)
 	{
 		System.out.print("Scoring...");
 		int n = trainer.getNumberofLanguages();

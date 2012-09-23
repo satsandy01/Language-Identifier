@@ -25,18 +25,30 @@ public class Language
 		filename = file;
 	}
 	//making the trained data available
+	/**
+	 * returns the language-id of the Language instance
+	 */
 	public int getLanguageId()
 	{
 		return id;
 	}
+	/**
+	 * returns the name of the language corresponding to the Language instance
+	 */
 	public String getName()
 	{
 		return name;
 	}
+	/**
+	 * returns the sum total of the frequencies of all the words of the Language instance
+	 */
 	public int getTotalFrequencyCount()
 	{
 		return total_frequency;
 	}
+	/**
+	 * returns the frequency of "word" in the language's statistical data
+	 */
 	public int getWordFrequency(String word)
 	{
 		if(wordFreq.containsKey(word))
@@ -44,6 +56,9 @@ public class Language
 		else
 			return 0;
 	}
+	/**
+	 * returns the word-id of the "word" for the Language instance
+	 */
 	public int getWordId(String word)
 	{
 		if(wordId.containsKey(word))
@@ -51,10 +66,17 @@ public class Language
 		else
 			return -1;
 	}
+	/**
+	 * returns the Set of words that have been used when training on the corresponding language
+	 */
 	public Set<String> getSetOfWords() //returns the set of words in a particular language
 	{
 		return wordId.keySet();
 	}
+	/**
+	 * reads the file containing all the statistical data of the language
+	 * and stores (word, wordId) and (word, wordFreq) in the corresponding HashMaps
+	 */
 	public void train()
 	{
 		try

@@ -21,21 +21,34 @@ public class LanguageTrainer
 		list = new ArrayList<Language>();
 	}
 	//Making stored data available
+	/**
+	 * returns the number of languages that the classifier supports
+	 */ 
 	public int getNumberofLanguages()
 	{
 		return numberofLanguages;
 	}
+	/**
+	 * returns the total number of words from all the supported languages combined
+	 */
 	public int getSizeOfVocabulary()
 	{
 		//total number of words in all the languages combined
 		return vocabulary.size();
 	}
+	/**
+	 * returns the language with language-id i
+	 */
 	public Language getLanguage(int i)
 	{
 		//returns the language object correspoding to language-id=i
 		//the language object holds the trained information about the corresponding language
 		return list.get(i);
 	}
+	/**
+	 * starts training on all the languages
+	 * following the sequence in which they are mentioned in languages.txt
+	 */
 	public void startTraining()
 	{
 		try
