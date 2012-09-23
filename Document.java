@@ -23,7 +23,7 @@ public class Document
 			System.out.print("Reading document...");
 			while((line=filein.readLine())!=null)
 			{
-				if(line=="\n")
+				if(line.equals("")||line==null)
 					continue;
 				content += (line+" ");
 			}

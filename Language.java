@@ -68,7 +68,7 @@ public class Language
 			while(((line=filein.readLine())!=null) && (count<trainingSize))
 			{
 				count++;
-				if(count<100 || line=="\n")				
+				if(count<100 || line.equals("") || line==null)				
 					continue;
 				String contents[] = line.split("\t");
 				total_frequency+=Integer.parseInt(contents[2]);
