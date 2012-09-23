@@ -15,11 +15,12 @@ public class Classifier
 	public Language classify(Document doc) throws IOException
 	{
 		System.out.print("Scoring...");
-		double p[]=new double[trainer.getNumberofLanguages()]; 
+		int n = trainer.getNumberofLanguages();
+		double p[]=new double[n]; 
 		//p[i] = log conditional probability of the test string being the ith language
 		for(int i=0;i<p.length;i++)
 		{
-			p[i]=Math.log(0.10);
+			p[i]=-Math.log(n);
 		}
 		int V=trainer.getSizeOfVocabulary();
 		ArrayList<String> words = doc.getWords();
