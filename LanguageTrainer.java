@@ -11,7 +11,7 @@ public class LanguageTrainer
 	private int numberofLanguages;
 	//number of languages supported by the identifier
 	private int trainingSize;
-	//number of words/language to train upon; by default=5000, can be explicitly specified by the user
+	//number of words-per-language to train upon; by default=5000, can be explicitly specified by the user
 	public LanguageTrainer(String file,int tSize)
 	{
 		vocabulary = new HashSet<String>();
