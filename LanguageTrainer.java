@@ -47,7 +47,7 @@ public class LanguageTrainer
 	}
 	/**
 	 * starts training on all the languages
-	 * following the sequence in which they are mentioned in languages.txt
+	 * following the sequence in which they are mentioned in languageNamesFile
 	 */
 	public void startTraining()
 	{
@@ -77,7 +77,7 @@ public class LanguageTrainer
 		}
 		catch(Exception io)
 		{
-			System.err.println("\nFile containing the list of languages not found.\nPlease create the file \"resources/languages.txt\" in the format mentioned in the README\n");
+			System.err.println("\nFile containing the list of languages not found.\nPlease create the file "+languageNamesFile+" in the format mentioned in the README\n");
 			System.exit(0);
 		}
 	}
