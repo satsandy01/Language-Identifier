@@ -93,9 +93,10 @@ public class Language
 				if(count<100 || line.equals("") || line==null)				
 					continue;
 				String contents[] = line.split("\t");
-				total_frequency+=Integer.parseInt(contents[2]);
+				int freq = Integer.parseInt(contents[2]);
+				total_frequency += freq;
 				Integer wid = new Integer(Integer.parseInt(contents[0]));
-				Integer wfreq = new Integer(Integer.parseInt(contents[2]));
+				Integer wfreq = new Integer(freq);
 				wordId.put(contents[1], wid);
 				wordFreq.put(contents[1], wfreq);
 			}
