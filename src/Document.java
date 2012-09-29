@@ -6,7 +6,7 @@ public class Document
 	private ArrayList<String> words; //array of words after tokenizing the document
 	/**
 	 * 
-	 * @param f FileName of the document to be classified
+	 * f is the file-name of the document to be classified
 	 */
 	public Document(String f)
 	{

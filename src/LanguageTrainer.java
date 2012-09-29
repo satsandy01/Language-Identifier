@@ -14,8 +14,8 @@ public class LanguageTrainer
 	//number of words-per-language to train upon; by default=5000, can be explicitly specified by the user
 	/**
 	 * 
-	 * @param file The file containing the list of languages and location of their statistical data
-	 * @param tSize The training-size
+	 * file is the name of the file containing the list of languages and location of their statistical data,
+	 * tSize is the training-size
 	 */
 	public LanguageTrainer(String file,int tSize)
 	{

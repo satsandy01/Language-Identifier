@@ -16,10 +16,10 @@ public class Language
 	private String filename; //name of the file containing statistical data of words in that language
 	/**
 	 * 
-	 * @param i The Language-id
-	 * @param n Name of the language
-	 * @param file The text-file that contains statistical data for the language
-	 * @param t The training-size
+	 * i is the Language-id,
+	 * n is the name of the language,
+	 * file is the text-file that contains statistical data for the language,
+	 * t is the training-size
 	 */
 	public Language(int i, String n, String file, int t)
 	{

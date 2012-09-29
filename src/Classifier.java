@@ -4,7 +4,7 @@ public class Classifier
 {
 	LanguageTrainer trainer;
 	/**
-	 * an instance of LanguageTrainer for the Classifier object
+	 * t is an instance of LanguageTrainer for the Classifier object
 	 * using which it gets all the statistical information available after training
 	 */
 	public Classifier(LanguageTrainer t)
