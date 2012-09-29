@@ -1,12 +1,18 @@
 import java.io.*;
 
+/**
+ * This class has to be run to start the Language-Identifier program
+ * 
+ * Steps:
+ * Get the document name or from the user,
+ * Read the file
+ * Pre-process and break the string into tokens(words)
+ * Classify the document and get the predicted language
+ */
 public class Identifier
 {
 	static final String languageList="resources/languages.txt";
 	//file that holds the name of languages and their corresponding word-files
-	/**
-	 * This class has to be run to start the Language-Identifier program
-	 */ 
 	public static void main(String args[]) throws IOException
 	{
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
@@ -30,12 +36,6 @@ public class Identifier
 		int more=1;
 		while(more==1)
 		{
-			/**
-			 * Get the document name or from the user,
-			 * Read the file
-			 * Pre-process and break the string into tokens(words)
-			 * Classify the document and get the predicted language
-			 */
 			System.out.print("\nEnter name of document: ");
 			String documentName=in.readLine();
 			Document doc = new Document(documentName);

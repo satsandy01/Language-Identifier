@@ -12,6 +12,11 @@ public class LanguageTrainer
 	//number of languages supported by the identifier
 	private int trainingSize;
 	//number of words-per-language to train upon; by default=5000, can be explicitly specified by the user
+	/**
+	 * 
+	 * @param file The file containing the list of languages and location of their statistical data
+	 * @param tSize The training-size
+	 */
 	public LanguageTrainer(String file,int tSize)
 	{
 		vocabulary = new HashSet<String>();
@@ -22,14 +27,14 @@ public class LanguageTrainer
 	}
 	//Making stored data available
 	/**
-	 * returns the number of languages that the classifier supports
-	 */ 
+	 * @return The number of languages that the classifier supports
+	 */
 	public int getnumberOfLanguages()
 	{
 		return numberOfLanguages;
 	}
 	/**
-	 * returns the total number of words from all the supported languages combined
+	 * @return The total number of words from all the supported languages combined
 	 */
 	public int getSizeOfVocabulary()
 	{
@@ -37,16 +42,15 @@ public class LanguageTrainer
 		return vocabulary.size();
 	}
 	/**
-	 * returns the language with language-id i
+	 * @return The Language object with language-id i
 	 */
 	public Language getLanguage(int i)
 	{
-		//returns the language object correspoding to language-id=i
 		//the language object holds the trained information about the corresponding language
 		return list.get(i);
 	}
 	/**
-	 * starts training on all the languages
+	 * Starts training on all the languages
 	 * following the sequence in which they are mentioned in languageNamesFile
 	 */
 	public void startTraining()

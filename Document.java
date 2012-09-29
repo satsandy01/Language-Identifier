@@ -4,13 +4,17 @@ public class Document
 {
 	private String filename;
 	private ArrayList<String> words; //array of words after tokenizing the document
+	/**
+	 * 
+	 * @param f FileName of the document to be classified
+	 */
 	public Document(String f)
 	{
 		filename = f;
 		words = new ArrayList<String>();
 	}
 	/**
-	 * returns the array of words contained within the document
+	 * @return The array of words contained within the document
 	 */
 	public ArrayList<String> getWords()
 	{
@@ -19,7 +23,7 @@ public class Document
 	/**
 	 * reads the document, pre-processes the resulting string to remove common punctuation marks
 	 * and splits it into words
-	 * returns true if the operation was succesful, false otherwise
+	 * @return true if the operation was succesful, false otherwise
 	 */
 	public boolean breakIntoWords()
 	{

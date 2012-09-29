@@ -13,7 +13,9 @@ public class Classifier
 	}
 	/**
 	 * Scores each language for the words in the document with log conditional probabilities (Multinomial Naive Bayes)
-	 * returns the Language object corresponding to maximum likelihood
+	 * 
+	 * @param doc The document to be classified
+	 * @return The Language object corresponding to maximum likelihood
 	 */
 	public Language classify(Document doc)
 	{
