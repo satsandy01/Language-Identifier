@@ -18,16 +18,15 @@ Allows the user to decide to what extent he/she wants accuracy by allowing the u
 To run the Identifier:
 	
 	1. Open Terminal and Navigate to this directory.
-	2. Compile
-		javac *.java
-	3. Execute
-		java Identifier
+	2. Execute
+		java -cp bin Identifier
 	   Alternatively, to specify training size as 10000 (for example),
-		java Identifier 10000
+		java -cp bin Identifier 10000
 
 The program starts with training on the languages and then prompts to provide the name of a test document. Once you provide it, the Identifier will score and predict its language.
 
 	* To view the Javadoc, open doc/index.html in a web-browser.
+	* To view the source code, navigate to src/ directory
 
 To add another language:
 	
