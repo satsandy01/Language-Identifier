@@ -27,6 +27,8 @@ To run the Identifier:
 
 The program starts with training on the languages and then prompts to provide the name of a test document. Once you provide it, the Identifier will score and predict its language.
 
+	* To view the Javadoc, open doc/index.html in a web-browser.
+
 To add another language:
 	
 	1. Download the corpus for that language.
