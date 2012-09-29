@@ -36,7 +36,7 @@ public class Identifier
 		int more=1;
 		while(more==1)
 		{
-			System.out.print("\nEnter name of document (path): ");
+			System.out.print("\nEnter name of document (including path): ");
 			String documentName=in.readLine();
 			Document doc = new Document(documentName);
 			if(doc.breakIntoWords())
