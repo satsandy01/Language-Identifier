@@ -34,6 +34,6 @@ To add another language:
 	2. Find the file within the corpus which contains the triplet
 		wordId-word-frequency
 	3. Copy that file to the resources directory within this directory.
-	4. Open the file resources/language.txt
+	4. Open the file bin/resources/language.txt
 	5. Add an entry in this format:
 		"<language_name><tab>resources/<name_of_words-file_copied>".
