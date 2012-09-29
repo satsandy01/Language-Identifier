@@ -16,6 +16,7 @@ Corpus used: http://corpora.uni-leipzig.de/
 
 Allows the user to decide to what extent he/she wants accuracy by allowing the user to provide training size as input. By default, it is 5000 words/language. These words are selected on the basis of their frequencies in the corpus data.
 The program starts with training on the languages and then prompts to provide the name of a test document. Once you provide it, the Identifier will score and predict its language.
+
 * To run the Identifier:
 	
 	1. Open Terminal and Navigate to this directory.
