@@ -34,7 +34,7 @@ The program starts with training on the languages and then prompts to provide th
 	1. Download the corpus for that language.
 	2. Find the file within the corpus which contains the triplet
 		wordId-word-frequency
-	3. Copy that file to the resources directory within this directory.
+	3. Copy that file to the bin/resources directory within this directory.
 	4. Open the file bin/resources/language.txt
 	5. Add an entry in this format:
 		"<language_name><tab>resources/<name_of_words-file_copied>".
