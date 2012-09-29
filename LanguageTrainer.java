@@ -8,7 +8,7 @@ public class LanguageTrainer
 	//Array of Language Objects, corresponding to the list of languages supported by the identifier
 	private String languageNamesFile;
 	//file that holds the name of languages and their corresponding word-files
-	private int numberofLanguages;
+	private int numberOfLanguages;
 	//number of languages supported by the identifier
 	private int trainingSize;
 	//number of words-per-language to train upon; by default=5000, can be explicitly specified by the user
@@ -16,7 +16,7 @@ public class LanguageTrainer
 	{
 		vocabulary = new HashSet<String>();
 		languageNamesFile=file;
-		numberofLanguages=0;
+		numberOfLanguages=0;
 		trainingSize=tSize;
 		list = new ArrayList<Language>();
 	}
@@ -24,9 +24,9 @@ public class LanguageTrainer
 	/**
 	 * returns the number of languages that the classifier supports
 	 */ 
-	public int getNumberofLanguages()
+	public int getnumberOfLanguages()
 	{
-		return numberofLanguages;
+		return numberOfLanguages;
 	}
 	/**
 	 * returns the total number of words from all the supported languages combined
@@ -72,7 +72,7 @@ public class LanguageTrainer
 				//adding the set of words in the language to the combined vocabulary
 				idx++;
 			}
-			numberofLanguages = list.size();
+			numberOfLanguages = list.size();
 			System.out.println("Training complete.");
 		}
 		catch(Exception io)

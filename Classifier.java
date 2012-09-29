@@ -1,4 +1,3 @@
-import java.io.*;
 import java.util.*;
 
 public class Classifier
@@ -19,7 +18,7 @@ public class Classifier
 	public Language classify(Document doc)
 	{
 		System.out.print("Scoring...");
-		int n = trainer.getNumberofLanguages();
+		int n = trainer.getnumberOfLanguages();
 		double p[]=new double[n]; 
 		//p[i] = log conditional probability of the test string being the ith language
 		for(int i=0;i<p.length;i++)
