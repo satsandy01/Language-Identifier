@@ -5,9 +5,9 @@ import java.io.*;
  * 
  * Steps:
  * Get the document name or from the user,
- * Read the file
- * Pre-process and break the string into tokens(words)
- * Classify the document and get the predicted language
+ * read the file,
+ * pre-process and break the string into tokens(words),
+ * classify the document and get the predicted language
  */
 public class Identifier
 {
