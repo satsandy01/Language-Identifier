@@ -38,3 +38,4 @@ The program starts with training on the languages and then prompts to provide th
 	4. Open the file bin/resources/language.txt
 	5. Add an entry in this format:
 		"<language_name><tab>resources/<name_of_words-file_copied>".
+	Note: For the 10 default languages, a format has been followed in naming the word-files, which may or may not be followed.
